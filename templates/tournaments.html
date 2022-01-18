@@ -1,0 +1,20 @@
+{% extends 'game.html' %}
+
+{% block titleExt %}<h3>Tournaments</h3>{% endblock titleExt %}
+
+{% block gameBody %}
+<div class="album bg-dark">
+  <div class="container-fluid px-5">
+    <div class="row">
+      {% for tournament in tournaments %}
+      <div class="col-md-12 text-white">
+        <h2>{{tournament}} <span class="fw-light">(winner: {{tournament.winnerTeam}})</span></h2>
+        <h3 class="text-end">Prize Pool: {{tournament.prizePool}}$</h3>
+        <p>{{tournament.description}}}</p>
+      </div>
+      <hr style="color: white;">
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock gameBody %}

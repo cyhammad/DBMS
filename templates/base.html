@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% endblock title %} | Game Warrior</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="header-section" style="border-bottom: yellow 2px solid;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <h2 class="text-white ms-5 fw-bold">Game <span style="color: yellow">Warrior</span></h2>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-2">
+              <a class="nav-link" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" aria-current="page" href="/library">Library</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" aria-current="page" href="/community">Community</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" aria-current="page" href="/advanceSearch">Advance Search</a>
+            </li>
+          </ul>
+          <div style="position: relative;">
+            <button class="btn btn-secondary dropdown-toggle text-dark me-5" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              {{username}}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/login">Log Out</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  {% block body %}{% endblock body %}
+  <footer>
+    <div class="container-fluid bg-dark border-top px-5">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="/static/img/footer-top-bg.png" alt="">
+        </div>
+        <div class="col-lg-6 text-white py-5">
+          <h1 class=" display-6 fw-bold text-center pt-5">Game <span style="color: yellow">Warrior</span></h1>
+          <p class="pt-5 text-center fw-light">© 2021, Game Warrior, Inc. All rights reserved. Game Warrior, the Game
+            Warrior logo, Fortnite, Game Warrior
+            Tournament, and the Game Warrior Tournament logo are trademarks or registered trademarks of Game Warrior,
+            Inc. in Pakistan and elsewhere.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-white" style="background-color: black;">
+      <p class="m-0 py-4 text-center">
+        Copyright &copy;2021 All rights reserved | This template is made with by <span
+          style="color: yellow;">Sinister</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

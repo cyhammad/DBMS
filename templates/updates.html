@@ -1,0 +1,19 @@
+{% extends 'game.html' %}
+
+{% block titleExt %}<h3>Updates</h3>{% endblock titleExt %}
+
+{% block gameBody %}
+<div class="album bg-dark">
+    <div class="container-fluid px-5">
+      <div class="row">
+        {% for update in updates %}
+        <div class="col-md-12 text-white">
+          <h2>{{update}}</h2>
+          <p class="fw-light">{{update.patchNotes}}}</p>
+        </div>
+        <hr style="color: white;">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock gameBody %}

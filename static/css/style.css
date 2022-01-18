@@ -1,0 +1,40 @@
+:root {
+  --danger: #ffc107;
+  --bg-dark: #212529;
+}
+
+.side-link:hover {
+  color: white !important;
+  border-radius: 5px 5px 0px 0px;
+  font-size: 18px;
+}
+
+.btn {
+  background-color: yellow !important;
+}
+
+.featurette-divider {
+  margin: 5rem 0;
+}
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
+.flex-container {
+  background-color: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex-item {
+  padding: 8px;
+  width: 290px;
+  height: 600px;
+  margin-bottom: 50px;
+}
+.card-title {
+  margin: 16px;
+  font-weight: 600;
+  color: white;
+}
