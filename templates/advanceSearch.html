@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Advance Search
+{% endblock title %}
+
+{% block body %}
+<div class="text-center container-fluid bg-dark text-white">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light display-5 fw-bold">Advance Search <span style="color: yellow">Games</span></h1>
+        </div>
+    </div>
+    <div class="container">
+        <form class="row g-3 px-5 align-items-center bg-dark text-white" method="post" action="/advanceSearch">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="form-label" for="category">Select Category</label>
+                    <select class="form-select form-select-md mb-3" name="categoryOpt" aria-label=".form-select-lg example" id="category">
+                        <option selected>{{selectedCategory}}</option>
+                        {% for category in categories %}
+                        <option value="{{category}}">{{category}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="genre">Select Genre</label>
+                    <select class="form-select form-select-md mb-3" name="genreOpt" id="genre" aria-label=".form-select-lg example">
+                        <option selected>{{selectedGenre}}</option>
+                        {% for genre in genres %}
+                        <option value="{{genre}}">{{genre}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="year">Select Release Year</label>
+                    <select class="form-select form-select-md mb-3" name="yearOpt" id="year" aria-label=".form-select-lg example">
+                        <option selected>{{selectedYear}}</option>
+                        {% for year in years %}
+                        <option value="{{year}}">{{year}} and onwards</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="rating">Select Ratings</label>
+                    <select class="form-select form-select-md mb-3" name="ratingOpt" aria-label=".form-select-lg example" id="rating">
+                        <option selected>{{selectedRating}}</option>
+                        {% for rating in ratings %}
+                        <option value="{{rating}}">{{rating}}+</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-12-gy-5">
+                <button type="submit" class="btn btn-warning">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% block gamesFound %}{% endblock gamesFound %}
+
+{% endblock body %}
