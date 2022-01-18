@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Library
+{% endblock title %}
+
+
+
+{% block body %}
+<main>
+  <section class="py-5 text-center container-fluid bg-dark text-white">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light display-5 fw-bold">Library of <span style="color: yellow">Games</span></h1>
+        <p class="lead text-muted">Welcome to the collection of amazing games on our website.</p>
+      </div>
+      <form class="row g-3 p-5 align-items-center" method="post" action="/library">
+        {% csrf_token %}
+        {{form}}
+        <input name="searchedGame" class="form-control" list="datalistOptions" id="dataList"
+          placeholder="Type to search...">
+        <datalist id="datalistOptions">
+          {% for game in games %}
+          <option value="{{game.name}}">
+            {% endfor %}
+        </datalist>
+        <div class="col-12-gy-5">
+          <button type="submit" class="btn btn-warning">Search</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <div class="flex-container">
+    {% for game in games %}
+    <div class="flex-item">
+      <div class="card-image">
+        <a href="/game/{{game}}/"></a><img class="bd-placeholder-img card-img-top" width="100%" height="450"
+          src="/static/img/Library/{{game}}.jpeg" alt="img"></a>
+        <h5 class="card-title">{{ game }}</h5>
+        <p class="card-text text-muted mx-3">{{ game.releaseYear }}</p>
+        <div class="d-flex justify-content-between mx-3 align-items-center">
+          <div class="btn-group">
+            <a href="/game/{{game}}/" class="btn btn-warning my-2">Show Details</a>
+          </div>
+          <small class="text-muted">{{game.price}}$</small>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock body %}

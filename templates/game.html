@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}
+Games
+{% endblock title %}
+
+{% block body %}
+<div class="divider" style="border: yellow;"></div>
+<div class="p-4 p-md-5 text-white bg-dark">
+    <div class="row">
+        <div class="col-md-6 px-0">
+            <h1 class="display-5 fw-bold"><span style="color: yellow;">{{name}}</span></h1>
+            <h6 class="display-7 fst_italic text-muted">{{releaseYear}}</h6> 
+            {% block titleExt %}{% endblock titleExt %}
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark">
+    <div class="row">
+        <div class="col-md-2 px-0">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <hr>
+                    <li class="nav-item">
+                        <a href="/game/{{name}}/" class="nav-link side-link text-white" aria-current="page">
+                            <i class="bi-bricks px-3" style="font-size: 1.2rem; color: yellow;"></i>
+                            Details
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="/game/{{name}}/tournaments" class="nav-link side-link text-white">
+                            <i class="bi-lightning-charge-fill px-3" style="font-size: 1.2rem; color: yellow;"></i>
+                            Tournaments
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="/game/{{name}}/proplayers" class="nav-link side-link text-white">
+                            <i class="bi-person-check-fill px-3" style="font-size: 1.2rem; color: yellow;"></i>
+                            Pro Players
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="/game/{{name}}/proteams" class="nav-link side-link text-white">
+                            <i class="bi-diagram-3-fill px-3" style="font-size: 1.2rem; color: yellow;"></i>
+                            Pro Teams
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="/game/{{name}}/developers" class="nav-link side-link text-white">
+                            <i class="bi-boxes px-3" style="font-size: 1.2rem; color: yellow;"></i>
+                            Developers
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="/game/{{name}}/news" class="nav-link side-link text-white">
+                            <i class="bi-newspaper px-3" style="font-size: 1.2rem; color: yellow;"></i>
+                            News
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="/game/{{name}}/updates" class="nav-link side-link text-white">
+                            <i class="bi-bar-chart-line-fill px-3" style="font-size: 1.2rem; color: yellow;"></i>
+                            Updates
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="/game/{{name}}/awards" class="nav-link side-link text-white">
+                            <i class="bi-award-fill px-3" style="font-size: 1.2rem; color: yellow;"></i>
+                            Awards
+                        </a>
+                    </li>
+                    <hr>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10 p-0 m-0">
+            {% block gameBody %}{% endblock gameBody %}
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
