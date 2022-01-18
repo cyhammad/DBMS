@@ -1,0 +1,19 @@
+{% extends 'game.html' %}
+
+{% block titleExt %}<h3>Developers</h3>{% endblock titleExt %}
+
+{% block gameBody %}
+<div class="album bg-dark">
+    <div class="container-fluid px-5">
+      <div class="row">
+        {% for developer in developers %}
+          <div class="col-md-12 text-white">
+            <h1>{{developer}}</h1>
+            <p>{{developer.description}}</p>
+          </div>
+          <hr style="color: white;">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock gameBody %}

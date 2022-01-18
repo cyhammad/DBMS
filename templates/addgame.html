@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Add Game
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <form class="row g-3 p-5 align-items-center" method="post" action="/addgame">
+        {% csrf_token %}
+        {{form}}
+        <div class="col-mt-1">
+            <span id="passwordHelpInline" class="form-text">
+            </span>
+        </div>
+        <div class="col-md-4">
+            <label for="inputName" class="form-label">Name</label>
+            <input name="name" type="text" class="form-control" id="inputName" placeholder="Enter the name of the game." required>
+        </div>
+        <div class="col-mt-1">
+            <span id="passwordHelpInline" class="form-text">
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="desc" class="form-label">Description</label>
+            <textarea name="description" class="form-control" id="desc" rows="3" required></textarea>
+        </div>
+        <div class="col-md-4">
+            <label for="year" class="form-label">Release Year</label>
+            <input name="releaseYear" type="number" min="1990" max="2022" class="form-control" id="year" required>
+        </div>
+        <div class="col-mt-1">
+            <span id="passwordHelpInline" class="form-text">
+            </span>
+        </div>
+        <div class="col-md-4">
+            <label for="ratings" class="form-label">Ratings</label>
+            <input name="ratings" type="number" min="0.0" max="10.0" step="0.1" class="form-control" id="ratings" required>
+        </div>
+        <div class="col-mt-1">
+            <span id="passwordHelpInline" class="form-text">
+            </span>
+        </div>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="col-12-gy-5">
+            <button type="submit" class="btn btn-warning">Add Game</button>
+        </div>
+    </form>
+</div>
+
+{% endblock body %}
